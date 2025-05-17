@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <p>
+        <a href="{{ url_for('create') }}">+ Create New Post</a> |
+        <a href="{{ url_for('dashboard') }}">🛠️ Dashboard</a> |
+        <a href="{{ url_for('login') }}">🔐 Login</a> |
+        <a href="{{ url_for('logout') }}">🚪 Logout</a>
+    </p>
+    {% if posts %}
+        <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{{ url_for('post', slug=post['slug']) }}">
+                    <strong>{{ post['title'] }}</strong>
+                </a> — {{ post['created_at'] }} by {{ post['username'] }}
+                - <a href="{{ url_for('edit', id=post['id']) }}">Edit</a>
+                - <a href="{{ url_for('toggle_publish', id=post['id']) }}">Unpublish</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No blog posts yet.</p>
+    {% endif %}
+</body>
+</html>

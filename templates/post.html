@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post['title'] }}</title>
+</head>
+<body>
+    <h1>{{ post['title'] }}</h1>
+    <p><em>Posted on {{ post['created_at'] }} by {{ post['username'] }}</em></p>
+    <div>{{ body_html|safe }}</div>
+
+    <p>
+        <a href="{{ url_for('index') }}">Back to homepage</a> |
+        <a href="{{ url_for('dashboard') }}">🛠️ Dashboard</a>
+    </p>
+</body>
+</html>
