@@ -92,7 +92,7 @@ Login is required to access the dashboard and post creation/editing routes. Logo
 Some features required additional reading outside of the course:
 
 - `markdown` Python library – https://pypi.org/project/Markdown/
-- Slug generation logic – https://realpython.com/python-slugify/
+- Slug generation logic – implemented manually using a custom slugify() function with re.sub() to create URL-friendly slugs. Inspired by solutions like this Stack Overflow post: https://stackoverflow.com/questions/295135/turn-a-string-into-a-valid-filename-in-python
 - Flask route examples and query patterns – https://flask.palletsprojects.com/
 
 ---
